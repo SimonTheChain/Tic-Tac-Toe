@@ -14,47 +14,76 @@ def print_board():
 	print "c  %s | %s | %s " % (c1, c2, c3)
 
 # This lets the users choose where to place their mark
+# and verifies if that space is already occupied
 def player_input(player, x_or_o):
-	player = raw_input("\nPlace your %s:\n> " % x_or_o)
-	if player == "a1":
-		global a1
-		a1 = x_or_o
-		print_board()
-	elif player == "a2":
-		global a2
-		a2 = x_or_o
-		print_board()
-	elif player == "a3":
-		global a3
-		a3 = x_or_o
-		print_board()
-	elif player == "b1":
-		global b1
-		b1 = x_or_o
-		print_board()
-	elif player == "b2":
-		global b2
-		b2 = x_or_o
-		print_board()
-	elif player == "b3":
-		global b3
-		b3 = x_or_o
-		print_board()
-	elif player == "c1":
-		global c1
-		c1 = x_or_o
-		print_board()
-	elif player == "c2":
-		global c2
-		c2 = x_or_o
-		print_board()
-	elif player == "c3":
-		global c3
-		c3 = x_or_o
-		print_board()
-	else:
-		print "\nUnrecognized input."
-		quit()
+	global a1, a2, a3, b1, b2, b3, c1, c2, c3
+	verif_loop = True
+	while verif_loop == True:
+		player = raw_input("\nPlace your %s:\n> " % x_or_o)
+		if player == "a1":
+			if a1 == "X" or a1 == "O":
+				print "\nAlready occupied, choose again.\n"
+			else:
+				a1 = x_or_o
+				print_board()
+				verif_loop = False
+		elif player == "a2":
+			if a2 == "X" or a2 == "O":
+				print "\nAlready occupied, choose again.\n"
+			else:
+				a2 = x_or_o
+				print_board()
+				verif_loop = False
+		elif player == "a3":
+			if a3 == "X" or a3 == "O":
+				print "\nAlready occupied, choose again.\n"
+			else:
+				a3 = x_or_o
+				print_board()
+				verif_loop = False
+		elif player == "b1":
+			if b1 == "X" or b1 == "O":
+				print "\nAlready occupied, choose again.\n"
+			else:
+				b1 = x_or_o
+				print_board()
+				verif_loop = False
+		elif player == "b2":
+			if b2 == "X" or b2 == "O":
+				print "\nAlready occupied, choose again.\n"
+			else:
+				b2 = x_or_o
+				print_board()
+				verif_loop = False
+		elif player == "b3":
+			if b3 == "X" or b3 == "O":
+				print "\nAlready occupied, choose again.\n"
+			else:
+				b3 = x_or_o
+				print_board()
+				verif_loop = False
+		elif player == "c1":
+			if c1 == "X" or c1 == "O":
+				print "\nAlready occupied, choose again.\n"
+			else:
+				c1 = x_or_o
+				print_board()
+				verif_loop = False
+		elif player == "c2":
+			if c2 == "X" or c2 == "O":
+				print "\nAlready occupied, choose again.\n"
+			else:
+				c2 = x_or_o
+				print_board()
+				verif_loop = False
+		elif player == "c3":
+			if c3 == "X" or c3 == "O":
+				print "\nAlready occupied, choose again.\n"
+			else:
+				c3 = x_or_o
+				print_board()
+		else:
+			print "\nUnrecognized input."
 
 # This checks if the winning conditions have been met
 def win_check(x_or_o):
