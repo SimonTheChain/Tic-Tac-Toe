@@ -15,49 +15,46 @@ def print_board():
 
 # This lets the users choose where to place their mark
 def player_input(player, x_or_o):
-	player_loop = True
-	while player_loop == True:
-		player = raw_input("\nPlace your %s:\n> " % x_or_o)
-		if player == "a1":
-			global a1
-			a1 = x_or_o
-			print_board()
-		elif player == "a2":
-			global a2
-			a2 = x_or_o
-			print_board()
-		elif player == "a3":
-			global a3
-			a3 = x_or_o
-			print_board()
-		elif player == "b1":
-			global b1
-			b1 = x_or_o
-			print_board()
-		elif player == "b2":
-			global b2
-			b2 = x_or_o
-			print_board()
-		elif player == "b3":
-			global b3
-			b3 = x_or_o
-			print_board()
-		elif player == "c1":
-			global c1
-			c1 = x_or_o
-			print_board()
-		elif player == "c2":
-			global c2
-			c2 = x_or_o
-			print_board()
-		elif player == "c3":
-			global c3
-			c3 = x_or_o
-			print_board()
-		else:
-			print "\nUnrecognized input."
-			quit()
-		win_check("X")
+	player = raw_input("\nPlace your %s:\n> " % x_or_o)
+	if player == "a1":
+		global a1
+		a1 = x_or_o
+		print_board()
+	elif player == "a2":
+		global a2
+		a2 = x_or_o
+		print_board()
+	elif player == "a3":
+		global a3
+		a3 = x_or_o
+		print_board()
+	elif player == "b1":
+		global b1
+		b1 = x_or_o
+		print_board()
+	elif player == "b2":
+		global b2
+		b2 = x_or_o
+		print_board()
+	elif player == "b3":
+		global b3
+		b3 = x_or_o
+		print_board()
+	elif player == "c1":
+		global c1
+		c1 = x_or_o
+		print_board()
+	elif player == "c2":
+		global c2
+		c2 = x_or_o
+		print_board()
+	elif player == "c3":
+		global c3
+		c3 = x_or_o
+		print_board()
+	else:
+		print "\nUnrecognized input."
+		quit()
 
 # This checks if the winning conditions have been met
 def win_check(x_or_o):
@@ -69,10 +66,14 @@ def win_check(x_or_o):
 (a3 == x_or_o and b3 == x_or_o and c3 == x_or_o) or \
 (a1 == x_or_o and b2 == x_or_o and c3 == x_or_o) or \
 (a3 == x_or_o and b2 == x_or_o and c1 == x_or_o):
-		global player_loop
-		player_loop = False
-		print "%s wins!" % x_or_o
-	
+		print "\n%s wins!\n" % x_or_o
+		quit()
+		
 # The program starts here
 print_board()
-player_input(playerX, "X")
+input_loop = True
+while input_loop == True:
+	player_input(playerX, "X")
+	win_check("X")
+	player_input(playerO, "O")
+	win_check("O")
