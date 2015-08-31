@@ -82,6 +82,7 @@ def player_input(player, x_or_o):
 			else:
 				c3 = x_or_o
 				print_board()
+				verif_loop = False
 		else:
 			print "\nUnrecognized input."
 
